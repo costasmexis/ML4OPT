@@ -23,6 +23,10 @@ def main():
     print(f'CiR_2 = {ewen_pyomo_model.CiR[2].value}')
     print(f'CiR_3 = {ewen_pyomo_model.CiR[3].value}')
     
+    print(f'CoR_1 = {ewen_pyomo_model.CoR[1].value}')
+    print(f'CoR_2 = {ewen_pyomo_model.CoR[2].value}')
+    print(f'CoR_3 = {ewen_pyomo_model.CoR[3].value}')
+
 if __name__ == '__main__':
     main()
     
