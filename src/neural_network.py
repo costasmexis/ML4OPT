@@ -43,13 +43,12 @@ def create_nn(
 ) -> Sequential:
     
     model = Sequential()
-    model.add(Dense(32, activation="sigmoid", input_dim=x.shape[1]))
-    model.add(Dense(128, activation="sigmoid"))
-    model.add(Dense(64, activation="sigmoid"))
+    model.add(Dense(64, activation="relu", input_dim=x.shape[1]))
+    model.add(Dense(256, activation="relu"))
     model.add(Dense(1, activation="linear"))
-    model.compile(loss="mean_squared_error", optimizer=Adam(learning_rate=1e-4))
+    model.compile(loss="mean_squared_error", optimizer=Adam(learning_rate=1e-5))
     history = model.fit(
-        x, y, epochs=1000, batch_size=124, validation_split=0.33, verbose=2
+        x, y, epochs=5000, batch_size=8, validation_split=0.33, verbose=2
     )
     model.save(file_name)
     loss_curve(history)
